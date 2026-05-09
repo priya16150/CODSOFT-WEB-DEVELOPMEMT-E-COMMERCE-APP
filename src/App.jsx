@@ -11,7 +11,6 @@ import Checkout from './pages/Checkout';
 import Login from './pages/Login';
 import Register from './pages/Register';
 
-// Global styles (applied everywhere)
 const GlobalStyle = createGlobalStyle`
   * {
     margin: 0;
@@ -29,10 +28,9 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-// Layout component to conditionally show/hide Navbar
 const Layout = ({ children }) => {
   const location = useLocation();
-  // Hide navbar on Home, Login, and Register pages
+  
   const hideNavbar = location.pathname === '/' || location.pathname === '/login' || location.pathname === '/register';
   return (
     <>
