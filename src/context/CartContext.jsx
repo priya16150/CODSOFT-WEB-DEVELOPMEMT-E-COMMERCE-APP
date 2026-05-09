@@ -7,13 +7,13 @@ export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
   const [totalAmount, setTotalAmount] = useState(0);
 
-  // Load from localStorage
+
   useEffect(() => {
     const saved = localStorage.getItem('cart');
     if (saved) setCartItems(JSON.parse(saved));
   }, []);
 
-  // Save to localStorage and recalc total
+ 
   useEffect(() => {
     localStorage.setItem('cart', JSON.stringify(cartItems));
     const total = cartItems.reduce((sum, i) => sum + i.price * i.quantity, 0);
