@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import styled, { keyframes } from 'styled-components';
 import { useAuth } from '../context/AuthContext';
 
-// Animations
+
 const float = keyframes`
   0% { transform: translateY(0px); }
   50% { transform: translateY(-20px); }
@@ -14,8 +14,6 @@ const rotate = keyframes`
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 `;
-
-// Styled components
 const Page = styled.div`
   min-height: 100vh;
   display: flex;
