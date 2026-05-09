@@ -1,4 +1,4 @@
-// frontend/src/components/ProductCard.jsx
+
 import React, { useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { useCart } from '../context/CartContext';
