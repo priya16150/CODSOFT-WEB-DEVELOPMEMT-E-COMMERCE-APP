@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import styled, { keyframes } from 'styled-components';
 
-// ========== ANIMATIONS ==========
+
 const fadeUp = keyframes`
   from { opacity: 0; transform: translateY(30px); }
   to { opacity: 1; transform: translateY(0); }
@@ -19,7 +19,7 @@ const blink = keyframes`
   50% { opacity: 0; }
 `;
 
-// ========== STYLED COMPONENTS ==========
+
 const HeroSection = styled.div`
   background: linear-gradient(135deg, #ff0844, #ffb199);
   color: white;
@@ -164,22 +164,22 @@ const Home = () => {
     let timeout;
 
     if (!isDeleting && charIndex <= currentPhrase.length) {
-      // Typing forward
+      
       timeout = setTimeout(() => {
         setDisplayText(currentPhrase.substring(0, charIndex + 1));
         setCharIndex(prev => prev + 1);
       }, 100);
     } else if (!isDeleting && charIndex > currentPhrase.length) {
-      // Finished typing, pause then delete
+   
       timeout = setTimeout(() => setIsDeleting(true), 1500);
     } else if (isDeleting && charIndex > 0) {
-      // Deleting
+    
       timeout = setTimeout(() => {
         setDisplayText(currentPhrase.substring(0, charIndex - 1));
         setCharIndex(prev => prev - 1);
       }, 50);
     } else if (isDeleting && charIndex === 0) {
-      // Move to next phrase
+     
       setIsDeleting(false);
       setPhraseIndex((prev) => (prev + 1) % phrases.length);
     }
